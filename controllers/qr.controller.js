@@ -3,7 +3,8 @@ const qrModel = require("../models/qr.model");
 const createQR = async (req, res) => {
     try {
         const {accountName, date, time} = req.body;
-        const qr = new qrModel({accountName, date, time}).save();
+        console.log(req.body);
+        const qr = await new qrModel({accountName, date, time}).save();
         if(qr) {
             res.status(201).json({qr});
         }

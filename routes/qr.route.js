@@ -7,4 +7,4 @@ router.get("/:id", getOneQR);
 router.put("/:id", updateQR);
 router.delete("/:id", deleteQR);
 
-module.exports = router;x
+module.exports = router;
