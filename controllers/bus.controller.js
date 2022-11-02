@@ -2,12 +2,13 @@ const busModel = require("../models/bus.model");
 
 const createBus = async (req, res) => {
     try {
-        const {busNo, busOwner, nic, rout} = req.body;
+        const {busNo, busOwner, nic, rout, price} = req.body;
         const newBus = new busModel({
             busNo,
             busOwner,
             nic,
             rout,
+            price,
         });
         const savedBus = await newBus.save();
         if(savedBus) {
@@ -47,8 +48,8 @@ const getAllBus = async (req, res) => {
 const updateBus = async (req, res) => {
     try {
         const busId = req.params.id;
-        const {busNo, busOwner, nic, rout} = req.body;
-        const updatedBus = await busModel.findByIdAndUpdate(busId, {busNo, busOwner, nic, rout}, {new: true});
+        const {busNo, busOwner, nic, rout, price} = req.body;
+        const updatedBus = await busModel.findByIdAndUpdate(busId, {busNo, busOwner, nic, rout, price}, {new: true});
         if(updatedBus) {
             res.status(200).json({updatedBus});
         }
