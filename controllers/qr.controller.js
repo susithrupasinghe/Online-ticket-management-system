@@ -54,9 +54,22 @@ const deleteQR = async (req, res) => {
     }
 }
 
+const getAllQR = async (req, res) => {
+    try {
+        const qr = await qrModel.find();
+        if(qr) {
+            res.status(200).json({qr});
+        }
+    }
+    catch(err) {
+        res.status(500).json({err});
+    }
+}
+
 module.exports = {
     createQR,
     getOneQR,
     updateQR,
     deleteQR,
+    getAllQR,
 }
