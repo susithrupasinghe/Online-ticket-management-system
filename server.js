@@ -16,6 +16,7 @@ app.use('/api/payment', require('./routes/payment.route'));
 app.use('/api/bus', require('./routes/bus.route'));
 app.use('/api/qr', require('./routes/qr.route'));
 app.use('/api/timetable', require('./routes/timetable.route'));
+app.use('/api/report', require('./routes/report.route'));
 
 const PORT = process.env.PORT || 5000;
 
