@@ -16,6 +16,10 @@ const payment = new mongoose.Schema({
     cvv: {
         type: String,
         required: true
+    },
+    amount: {
+        type: Number,
+        required: true
     }
 }, {timestamps: true});
 

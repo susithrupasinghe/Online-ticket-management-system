@@ -1,17 +1,24 @@
 const mongoose = require('mongoose');
 
 const timetable = new mongoose.Schema({
-    date: {
-        type: Date,
-        required: true
-    },
     time: {
         type: String,
         required: true
     },
-    busId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'bus'
+    mon: {
+        type: String,
+    },
+    tue: {
+        type: String,
+    },
+    wed: {
+        type: String,
+    },
+    thu: {
+        type: String,
+    },
+    fri: {
+        type: String,
     }
 }, {timestamps: true});
 
