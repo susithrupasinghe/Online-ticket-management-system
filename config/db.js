@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const config = require("config");
 const db = config.get("mongoURL");
+var con;
 
 const connectDB = async () => {
   try {
@@ -12,4 +13,14 @@ const connectDB = async () => {
   }
 };
 
-module.exports = connectDB;
+const getCon = async () => {
+
+  if(!con){
+    con = connectDB()
+  }
+  
+  return con;
+
+}
+
+module.exports = getCon;
