@@ -24,6 +24,7 @@ const inspector = mongoose.Schema(
     },
     assigned: {
       type: String,
+      required: false,
     },
   },
   { timestamps: true }

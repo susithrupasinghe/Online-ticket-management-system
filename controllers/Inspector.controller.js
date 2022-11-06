@@ -10,6 +10,7 @@ const createInspector = async (req, res) => {
       phoneNumber,
       nic,
       password: encryptedPassword,
+      assigned: '-',
     }).save();
     if (newInspector) {
       res.status(201).json({ newInspector });
