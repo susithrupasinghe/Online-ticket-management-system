@@ -24,6 +24,11 @@ const user = new mongoose.Schema({
     password: {
         type: String,
         required: true,
+    },
+    status: {
+        type: String,
+        enum: ['active', 'rejected'],
+        default: 'active',
     }
 }, {timestamps: true});
 

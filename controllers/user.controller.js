@@ -82,10 +82,26 @@ const getAllUsers = async (req, res) => {
     }
 }
 
+const rejectUser = async (req, res) => {
+    try {
+        const username = req.params.username;
+        console.log(username);
+        const updatedUser = await userModel.findOneAndUpdate(username, {status: "rejected"}, {new: true});
+        console.log(updatedUser);
+        if(updatedUser) {
+            res.status(200).json({updatedUser});
+        }
+    }
+    catch(err) {
+        res.status(500).json({err});
+    }
+}
+
 module.exports = {
     createUser,
     getOneUser,
     updateUser,
     loginUser,
     getAllUsers,
+    rejectUser,
 }

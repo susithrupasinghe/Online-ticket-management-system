@@ -3,12 +3,13 @@ const paymentModel = require("../models/payment.model");
 const addPayment = async (req, res) => {
     try {
 
-        const {fullName, cardNumber, expDate, cvv} = req.body;
+        const {fullName, cardNumber, expDate, cvv, amount} = req.body;
         const newPayment = await new paymentModel({
             fullName,
             cardNumber,
             expDate,
-            cvv
+            cvv,
+            amount
         }).save();
         
         if(newPayment) {
