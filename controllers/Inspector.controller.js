@@ -34,7 +34,7 @@ const getOneInspector = async (req, res) => {
 const updateInspector = async (req, res) => {
   try {
     const inspectorId = req.params.id;
-    const { name, username, phoneNumber, address, nic } = req.body;
+    const { name, username, phoneNumber, nic } = req.body;
     const updatedInspector = await inspectorModel.findByIdAndUpdate(
       inspectorId,
       { name, username, phoneNumber, address, nic },
